@@ -17,8 +17,9 @@ easily use android preferences(the easy way!)
     compile 'com.mcs.easyprefs:easyprefs:1.0'
     
 ###examples:
-
+    to save my & your time here are the following things to rememeber
+    context = Activity.this or getActivity() //yes it can be used in both activities & fragments!
+    put(BlanK) = the id you want to associate with my(Blank)
+    my(Blank) = the data you want to save in sharedprefs
+    
     putDefaultString(context, putString, myString);
-    context = MainActivity.this or getActivity()
-    putString = is the "ID" you want to use
-    myString = is the string data your are saving...
