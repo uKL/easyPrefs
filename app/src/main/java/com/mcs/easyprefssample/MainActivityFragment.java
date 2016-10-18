@@ -22,7 +22,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-import static com.mcs.easyprefs.EasyPrefsMod.getDefaultString;
 import static com.mcs.easyprefs.EasyPrefsMod.getDefaultStringSet;
 import static com.mcs.easyprefs.EasyPrefsMod.putDefaultStringSet;
 
@@ -52,7 +51,6 @@ public class MainActivityFragment extends Fragment {
         myList.setItemAnimator(new DefaultItemAnimator());
         myList.setAdapter(adapter);
         TheList();
-
     }
 
     public void TheList() {

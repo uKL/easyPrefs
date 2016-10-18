@@ -40,68 +40,68 @@ public class EasyPrefsMod {
 
     //get stuff!
     //Strings
-    public static String getDefaultString(Context context, String getString) {
+    public static String getDefaultString(Context context, String getStringName) {
         SharedPreferences getPrefs = DefaultPrefs(context);
-        return getPrefs.getString(getString, "");
+        return getPrefs.getString(getStringName, "");
     }
-    public static String getCustomString(Context context, String Prefs, int mode, String getString) {
+    public static String getCustomString(Context context, String Prefs, int mode, String getStringName) {
         SharedPreferences getPrefs = CustomPrefs(context, Prefs, mode);
-        return getPrefs.getString(getString, "");
+        return getPrefs.getString(getStringName, "");
     }
 
     //booleans
-    public static boolean getDefaultBoolean(Context context, String getBoolean, boolean myBoolean) {
+    public static boolean getDefaultBoolean(Context context, String getBooleanName, boolean myBoolean) {
         SharedPreferences getPrefs = DefaultPrefs(context);
-        return getPrefs.getBoolean(getBoolean, myBoolean);
+        return getPrefs.getBoolean(getBooleanName, myBoolean);
     }
-    public static boolean getCustomBoolean(Context context, String Prefs, int mode, String getBoolean, boolean myBoolean) {
+    public static boolean getCustomBoolean(Context context, String Prefs, int mode, String getBooleanName, boolean myBoolean) {
         SharedPreferences getPrefs = CustomPrefs(context, Prefs, mode);
-        return getPrefs.getBoolean(getBoolean, myBoolean);
+        return getPrefs.getBoolean(getBooleanName, myBoolean);
     }
 
     //StringSet<String>
-    public static Set<String> getDefaultStringSet(Context context, String getStringSet, Set<String> myStringSet) {
+    public static Set<String> getDefaultStringSet(Context context, String getStringSetName, Set<String> myStringSet) {
         SharedPreferences getPrefs = DefaultPrefs(context);
-        return getPrefs.getStringSet(getStringSet, myStringSet);
+        return getPrefs.getStringSet(getStringSetName, myStringSet);
     }
 
-    public static Set<String> getCustomStringSet(Context context, String Prefs, int mode, String getStringSet, Set<String> myStringSet) {
+    public static Set<String> getCustomStringSet(Context context, String Prefs, int mode, String getStringSetName, Set<String> myStringSet) {
         SharedPreferences getPrefs = CustomPrefs(context, Prefs, mode);
-        return getPrefs.getStringSet(getStringSet, myStringSet);
+        return getPrefs.getStringSet(getStringSetName, myStringSet);
     }
 
     //int
-    public static int getDefaultInt(Context context, String getInt, int myInt) {
+    public static int getDefaultInt(Context context, String getIntName, int myInt) {
         SharedPreferences getPrefs = DefaultPrefs(context);
-        return getPrefs.getInt(getInt, myInt);
+        return getPrefs.getInt(getIntName, myInt);
     }
-    public static int getCustomInt(Context context, String Prefs, int mode, String getInt, int myInt) {
+    public static int getCustomInt(Context context, String Prefs, int mode, String getIntName, int myInt) {
         SharedPreferences getPrefs = CustomPrefs(context, Prefs, mode);
-        return getPrefs.getInt(getInt, myInt);
+        return getPrefs.getInt(getIntName, myInt);
     }
 
     //float
     @NonNull
-    public static Float getDefaultFloat(Context context, String getFloat, Float myFloat) {
+    public static Float getDefaultFloat(Context context, String getFloatName, Float myFloat) {
         SharedPreferences getPrefs = DefaultPrefs(context);
-        return getPrefs.getFloat(getFloat, myFloat);
+        return getPrefs.getFloat(getFloatName, myFloat);
     }
     @NonNull
-    public static Float getCustomFloat(Context context, String Prefs, int mode, String getFloat, int myFloat) {
+    public static Float getCustomFloat(Context context, String Prefs, int mode, String getFloatName, int myFloat) {
         SharedPreferences getPrefs = CustomPrefs(context, Prefs, mode);
-        return getPrefs.getFloat(getFloat, myFloat);
+        return getPrefs.getFloat(getFloatName, myFloat);
     }
 
     //long
     @NonNull
-    public static Long getDefaultLong(Context context, String getFloat, Long myFloat) {
+    public static Long getDefaultLong(Context context, String getFloatName, Long myFloat) {
         SharedPreferences getPrefs = DefaultPrefs(context);
-        return getPrefs.getLong(getFloat, myFloat);
+        return getPrefs.getLong(getFloatName, myFloat);
     }
     @NonNull
-    public static Long getCustomLong(Context context, String Prefs, int mode, String getLong, Long myLong) {
+    public static Long getCustomLong(Context context, String Prefs, int mode, String getLongName, Long myLong) {
         SharedPreferences getPrefs = CustomPrefs(context, Prefs, mode);
-        return getPrefs.getLong(getLong, myLong);
+        return getPrefs.getLong(getLongName, myLong);
     }
 
     //all
@@ -119,73 +119,73 @@ public class EasyPrefsMod {
 
     //put stuff
     //string
-    public static void putDefaultString(Context context, String putString, String myString) {
+    public static void putDefaultString(Context context, String putStringName, String myString) {
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.putString(putString, myString);
+        default0.putString(putStringName, myString);
         default0.apply();
     }
-    public static void putCustomString(Context context, String Prefs, int mode, String putString, String myString) {
+    public static void putCustomString(Context context, String Prefs, int mode, String putStringName, String myString) {
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.putString(putString, myString);
+        custom1.putString(putStringName, myString);
         custom1.apply();
     }
 
-    public static void putDefaultBoolean(Context context, String putBoolean, boolean bool) {
+    public static void putDefaultBoolean(Context context, String putBooleanName, boolean myBoolean) {
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.putBoolean(putBoolean, bool);
+        default0.putBoolean(putBooleanName, myBoolean);
         default0.apply();
     }
-    public static void putCustomBoolean(Context context, String Prefs, int mode, String putBoolean, boolean bool) {
+    public static void putCustomBoolean(Context context, String Prefs, int mode, String putBooleanName, boolean myBoolean) {
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.putBoolean(putBoolean, bool);
+        custom1.putBoolean(putBooleanName, myBoolean);
         custom1.apply();
     }
 
     //StringSet<String>
-    public static void putDefaultStringSet(Context context, String putStringSet, Set<String> myStringSet) {
+    public static void putDefaultStringSet(Context context, String putStringSetName, Set<String> myStringSet) {
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.putStringSet(putStringSet, myStringSet);
+        default0.putStringSet(putStringSetName, myStringSet);
         default0.apply();
     }
-    public static void putCustomStringSet(Context context, String Prefs, int mode, String putStringSet, Set<String> myStringSet) {
+    public static void putCustomStringSet(Context context, String Prefs, int mode, String putStringSetName, Set<String> myStringSet) {
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.putStringSet(putStringSet, myStringSet);
+        custom1.putStringSet(putStringSetName, myStringSet);
         custom1.apply();
     }
 
     //int
-    public static void putDefaultInt(Context context, String putInt, int myInt) {
+    public static void putDefaultInt(Context context, String putIntName, int myInt) {
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.putInt(putInt, myInt);
+        default0.putInt(putIntName, myInt);
         default0.apply();
     }
-    public static void putCustomInt(Context context, String Prefs, int mode, String putInt, int myInt) {
+    public static void putCustomInt(Context context, String Prefs, int mode, String putIntName, int myInt) {
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.putInt(putInt, myInt);
+        custom1.putInt(putIntName, myInt);
         custom1.apply();
     }
 
     //float
-    public static void putDefaultFloat(Context context, String putFloat, Float myFloat) {
+    public static void putDefaultFloat(Context context, String putFloatName, Float myFloat) {
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.putFloat(putFloat, myFloat);
+        default0.putFloat(putFloatName, myFloat);
         default0.apply();
     }
-    public static void putCustomFloat(Context context, String Prefs, int mode, String putFLoat, String myFloat) {
+    public static void putCustomFloat(Context context, String Prefs, int mode, String putFLoatName, String myFloat) {
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.putString(putFLoat, myFloat);
+        custom1.putString(putFLoatName, myFloat);
         custom1.apply();
     }
 
     //long
-    public static void putDefaultLong(Context context, String putLong, int myLong) {
+    public static void putDefaultLong(Context context, String putLongName, int myLong) {
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.putLong(putLong, myLong);
+        default0.putLong(putLongName, myLong);
         default0.apply();
     }
-    public static void putCustomLong(Context context, String Prefs, int mode, String putLong, int myLong) {
+    public static void putCustomLong(Context context, String Prefs, int mode, String putLongName, int myLong) {
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.putLong(putLong, myLong);
+        custom1.putLong(putLongName, myLong);
         custom1.apply();
     }
 
@@ -200,14 +200,14 @@ public class EasyPrefsMod {
         custom1.apply();
     }
 
-    public static void clearDefaultValue(Context context, String myKey){
+    public static void clearDefaultValue(Context context, String valueName){
         SharedPreferences.Editor default0 = defaultE(context);
-        default0.remove(myKey);
+        default0.remove(valueName);
         default0.apply();
     }
-    public static void clearCustomValue(Context context, String Prefs, int mode, String myKey){
+    public static void clearCustomValue(Context context, String Prefs, int mode, String valueName){
         SharedPreferences.Editor custom1 = customE(context, Prefs, mode);
-        custom1.remove(myKey);
+        custom1.remove(valueName);
         custom1.apply();
     }
 
