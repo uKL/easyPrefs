@@ -39,30 +39,30 @@ easily use android preferences(the easy way!)
 ###Strings!
 
     //to save a string to default prefs
-    putDefaultString(context, putStringName, myString);
+    putDefaultString(Context context, String putStringName, String myString);
     
     //to get a string from default prefs
-    getDefaultString(context, getStringName);//the string "name" you used to define the value you saved.
+    getDefaultString(Context context, String getStringName);//the string "name" you used to define the value you saved.
     
     //to save a string to custom prefs
-    putCustomString(context, Prefs, mode, putStringName, myString);
+    putCustomString(Context context, String Prefs, int mode, String putStringName, String myString);
     
     //to get a string from custom prefs
-    getCustomString(context, Prefs, mode, getStringName);
+    getCustomString(Context context, String Prefs, int mode, String getStringName);
     
 ###booleans
 
     //to save a boolean to default prefs
-    putDefaultBoolean(context, putBooleanName, boolean myBoolean);
+    putDefaultBoolean(Context context, String putBooleanName, boolean myBoolean);
     
     //to get a boolean from default prefs
-    getDefaultBoolean(context, getBooleanName, myBoolean);
+    getDefaultBoolean(Context context, String getBooleanName, boolean myBoolean);
     
     //to save a boolean to custom prefs
-    putCustomBoolean(context, Prefs, mode, putBooleanName, myboolean);
+    putCustomBoolean(Context context, String Prefs, int mode, String putBooleanName, boolean myboolean);
     
     //to get a boolean from custom prefs
-    getCustomBoolean(context, Prefs, mode, getBooleanName, myBoolean);
+    getCustomBoolean(Context context, String Prefs, int mode, String getBooleanName, boolean myBoolean);
     
 ###StringSet< String > 
 
@@ -70,13 +70,13 @@ easily use android preferences(the easy way!)
     putDefaultStringSet(Context context, String putStringSetName, Set<String> myStringSet);
     
     //to get a StringSet<String> from default Prefs
-    getDefaultStringSet(context, getStringSetName, myStringSet);
+    getDefaultStringSet(Context context, String getStringSetName, Set<String> myStringSet);
     
     //to save a StringSet<String> to default Prefs
     putCustomStringSet(Context context, String Prefs, int mode, String putStringSetName, Set<String> myStringSet);
     
     //to get a StringSet<String> from custom Prefs
-    getCustomStringSet(context, Prefs, mode, getStringSetName, myStringSet);
+    getCustomStringSet(Context context, String Prefs, int mode, String getStringSetName, Set<String> myStringSet);
     
     
 ###int
