@@ -1,4 +1,4 @@
-# easyPrefs
+# easyPrefs <a href='https://bintray.com/xstar97/Xstar97/easyprefs/_latestVersion'><img src='https://api.bintray.com/packages/xstar97/Xstar97/easyprefs/images/download.svg'></a>
 easily use android preferences(the easy way!)
 
     //optional: library now on jcenter!
