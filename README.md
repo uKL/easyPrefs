@@ -22,4 +22,8 @@ easily use android preferences(the easy way!)
     put(BlanK) = the id you want to associate with my(Blank)
     my(Blank) = the data you want to save in sharedprefs
     
+    //to save a string to default prefs(basicaly: app_id_preferences.xml)
     putDefaultString(context, putString, myString);
+    
+    getDefaultString(context, getString);//the string "id" you used
+    
