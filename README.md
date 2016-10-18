@@ -1,6 +1,7 @@
 # easyPrefs
 easily use android preferences(the easy way!)
 
+    //to use this library please add this to your project level build gradle like this!
     allprojects {
     repositories {
     ...
