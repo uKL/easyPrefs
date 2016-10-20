@@ -19,6 +19,9 @@ easily use android preferences(the easy way!)
     
 ###examples:
 
+please checkout this link for info about getting values from sharedpreferences...it will be easier for the page to explain on how you are suppose to get values! 
+https://developer.android.com/reference/android/content/SharedPreferences.html
+
     to save time...here are the following things to rememeber:
     
     1. context = Activity.this or getActivity() //yes it can be used in both activities & fragments!
