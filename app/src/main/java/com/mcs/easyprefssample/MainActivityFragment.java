@@ -1,10 +1,12 @@
 package com.mcs.easyprefssample;
 
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+import static com.mcs.easyprefs.EasyPrefsMod.DefaultPrefs;
 import static com.mcs.easyprefs.EasyPrefsMod.getDefaultStringSet;
 import static com.mcs.easyprefs.EasyPrefsMod.putDefaultStringSet;
 
@@ -33,6 +36,15 @@ public class MainActivityFragment extends Fragment {
     @BindView(R.id.messages_list)
     RecyclerView myList;
     @BindView(R.id.editText) EditText editText;
+
+    SharedPreferences pref;
+    SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                    // your stuff here
+                    Log.w("SharedPrefs", "pref changed: " + key);
+                }
+            };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -126,6 +138,8 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        pref = DefaultPrefs(getContext());
+        pref.unregisterOnSharedPreferenceChangeListener(listener);
     }
 
     @Override
@@ -141,6 +155,8 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        pref = DefaultPrefs(getContext());
+        pref.registerOnSharedPreferenceChangeListener(listener);
     }
 
 }
