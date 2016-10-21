@@ -15,7 +15,7 @@ easily use android preferences(the easy way!)
     }}
     
     //to use this library please add this to your app level build gradle!
-    compile 'com.mcs.easyprefs:easyprefs:1.0'
+    compile 'com.mcs.easyprefs:easyprefs:1.1.2'
     
 ###examples:
 
