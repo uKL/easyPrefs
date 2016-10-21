@@ -17,19 +17,19 @@ public class EasyPrefsMod {
     public static final int MODE_MULTI_PROCESS = 4;
 
     //SharedPrefs
-    private static SharedPreferences DefaultPrefs(Context context) {
+    public static SharedPreferences DefaultPrefs(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
-    private static SharedPreferences CustomPrefs(Context context, String Prefs, int mode) {
+    public static SharedPreferences CustomPrefs(Context context, String Prefs, int mode) {
         return context.getApplicationContext().getSharedPreferences(Prefs, mode); // 0 - for private mode
     }
 
     //SharedPreferences.Editor
-    private static SharedPreferences.Editor defaultE(Context context){
+    public static SharedPreferences.Editor defaultE(Context context){
         SharedPreferences defaultPrefs = DefaultPrefs(context);
         return defaultPrefs.edit();
     }
-    private static SharedPreferences.Editor customE(Context context, String Prefs, int mode){
+    public static SharedPreferences.Editor customE(Context context, String Prefs, int mode){
         SharedPreferences customPrefs = CustomPrefs(context, Prefs, mode);
         return customPrefs.edit();
     }
