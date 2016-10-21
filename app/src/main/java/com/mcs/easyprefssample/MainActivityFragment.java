@@ -1,5 +1,6 @@
 package com.mcs.easyprefssample;
 
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+import static com.mcs.easyprefs.EasyPrefsMod.DefaultPrefs;
 import static com.mcs.easyprefs.EasyPrefsMod.getDefaultStringSet;
 import static com.mcs.easyprefs.EasyPrefsMod.putDefaultStringSet;
 
@@ -34,6 +37,14 @@ public class MainActivityFragment extends Fragment {
     RecyclerView myList;
     @BindView(R.id.editText) EditText editText;
 
+    SharedPreferences pref;
+    SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            Toast.makeText(getActivity(), "key: " + key, Toast.LENGTH_LONG).show();
+        }
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
@@ -45,6 +56,8 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        pref = DefaultPrefs(getActivity());
 
         adapter = new MessageAdapter(getActivity(), messageList);
         myList.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -126,6 +139,8 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+
+        pref.unregisterOnSharedPreferenceChangeListener(listener);
     }
 
     @Override
@@ -141,6 +156,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        pref.registerOnSharedPreferenceChangeListener(listener);
     }
 
 }
