@@ -14,7 +14,7 @@ ext {
     gitUrl = 'https://github.com/Xstar97/easyPrefs.git'
     githubRepository= 'Xstar97/easyPrefs'
 
-    libraryVersion = '1.0'
+    libraryVersion = '1.1'
 
     developerId = 'xstar97'
     developerName = 'Xstar97'
@@ -32,8 +32,8 @@ android {
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
