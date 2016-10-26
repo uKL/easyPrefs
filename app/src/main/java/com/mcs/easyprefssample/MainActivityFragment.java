@@ -1,6 +1,7 @@
 package com.mcs.easyprefssample;
 
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -30,23 +31,15 @@ import static com.mcs.easyprefs.EasyPrefsMod.putDefaultStringSet;
 
 public class MainActivityFragment extends Fragment {
 
+    private SharedPreferences pref;
     private Unbinder unbinder;
+    private OnSharedPreferenceChangeListener listener;
     private List<Message> messageList = new ArrayList<>();
     private MessageAdapter adapter;
     @BindView(R.id.messages_list)
     RecyclerView myList;
     @BindView(R.id.editText) EditText editText;
 
-    SharedPreferences pref;
-    SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
-                @Override
-                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                    // your stuff here
-                    Log.w("SharedPrefs", "pref changed: " + key);
-                }
-            };
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         unbinder = ButterKnife.bind(this, view);
@@ -70,7 +63,6 @@ public class MainActivityFragment extends Fragment {
         messageList.add(txi);
         adapter.notifyDataSetChanged();
     }
-
     public String editText() {
         return editText.getText().toString();
     }
@@ -138,6 +130,13 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                Log.w("easyPrefs: ", "key: " + key);
+            }
+        };
         pref = DefaultPrefs(getContext());
         pref.unregisterOnSharedPreferenceChangeListener(listener);
     }
@@ -155,8 +154,14 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                Log.w("easyPrefs: ", "key: " + key);
+            }
+        };
         pref = DefaultPrefs(getContext());
         pref.registerOnSharedPreferenceChangeListener(listener);
     }
-
 }

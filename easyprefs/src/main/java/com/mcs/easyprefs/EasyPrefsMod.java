@@ -21,7 +21,7 @@ public class EasyPrefsMod {
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
     public static SharedPreferences CustomPrefs(Context context, String Prefs, int mode) {
-        return context.getApplicationContext().getSharedPreferences(Prefs, mode); // 0 - for private mode
+        return context.getSharedPreferences(Prefs, mode); // 0 - for private mode
     }
 
     //SharedPreferences.Editor
